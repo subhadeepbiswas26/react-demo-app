@@ -3,16 +3,12 @@ import './styles/App.css';
 import { subhadeep, renderName } from './components/person';
 import defaultSubhadeep from './components/defaultPerson';
 import AddContact from './components/AddContact';
+import MyForm from './components/Form';
+import MultiFieldForm from './components/MultiFieldForm';
 
-class Car {
+function Car(props) {
 
-  constructor(name) {
-    this.name = name
-  }
-
-  brand() {
-    return "The name of the brand of my car is " + this.name
-  }
+  return <h1>my car is {props.name}</h1>
 }
 
 const arrowFunction = name => "Hello " + name + " Arrow Function"
@@ -57,16 +53,24 @@ const car = {
 }
 
 const combineVehicle = { ...truck, ...car }
-const { carname, yom } = combineVehicle
+const param = "size";
+const config = {
+  ...truck,
+  [param]: 12
+};
+
+const cars = ["Audi", "BMW", "Aston Martin"]
+
+const carcomponents = cars.map((carname) => <Car name={carname} />)
 
 function App() {
 
-  const myCar = new Car("Aston Martin")
-
   return (
     <div className="App">
-      <h1> Component Add Contact Render <AddContact name="Subh" fontstyle="I"/></h1>
-      <h1>{myCar.brand()}</h1>
+      <h1> {config.size} {config.yom}  {config.name}</h1>
+      <MultiFieldForm />
+      {/*  <h1> Component Add Contact Render <AddContact name="Subh" fontstyle="I"/></h1>
+      {carcomponents}
       <h1>{arrowFunction("myarrow")}</h1>
       <h1>{arrowFunctionJSX("myarrow")}</h1>
       <h1>{type} and {state}</h1>
@@ -76,7 +80,7 @@ function App() {
       {renderName()}
       <ul>
         {myArrayLi}
-      </ul>
+  </ul> */}
     </div>
   );
 }
