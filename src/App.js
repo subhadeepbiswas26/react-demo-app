@@ -54,10 +54,7 @@ const car = {
 
 const combineVehicle = { ...truck, ...car }
 const param = "size";
-const config = {
-  ...truck,
-  [param]: 12
-};
+const config = { ...truck, [param]: 12 };
 
 const cars = ["Audi", "BMW", "Aston Martin"]
 
@@ -67,9 +64,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1> {config.size} {config.yom}  {config.name}</h1>
       <MultiFieldForm />
-      {/*  <h1> Component Add Contact Render <AddContact name="Subh" fontstyle="I"/></h1>
+      {
+      /*  
+      <h1> {config.size} {config.yom}  {config.name}</h1>
+      <h1> Component Add Contact Render <AddContact name="Subh" fontstyle="I"/></h1>
       {carcomponents}
       <h1>{arrowFunction("myarrow")}</h1>
       <h1>{arrowFunctionJSX("myarrow")}</h1>
@@ -77,10 +76,12 @@ function App() {
       <h1>{carname} and {yom}</h1>
       
       <h1>Default Subhadeep  is {defaultSubhadeep.name}</h1>
-      {renderName()}
+      { renderName() }
       <ul>
         {myArrayLi}
-  </ul> */}
+      </ul> 
+    */
+  }
     </div>
   );
 }

@@ -20,7 +20,8 @@ export default function MultiFieldForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Enter your name:
+           <div> 
+            <label>Enter your name: &nbsp;
                 <input
                     type="text"
                     name="username"
@@ -28,7 +29,8 @@ export default function MultiFieldForm() {
                     onChange={handleChange}
                 />
             </label>
-            <label>Enter your age:
+            <br/>
+            <label>Enter your age:&nbsp;
                 <input
                     type="number"
                     name="age"
@@ -36,7 +38,8 @@ export default function MultiFieldForm() {
                     onChange={handleChange}
                 />
             </label>
-            <input type="submit" />
+            </div>
+            <div> <input type="submit" /></div>
         </form>
     )
 }
